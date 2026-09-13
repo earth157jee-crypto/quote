@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      body { min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 24px; font-family: Georgia, 'Times New Roman', serif; color: #f8f4ed; background: radial-gradient(circle at top left, #5a3c8c, transparent 38%), radial-gradient(circle at bottom right, #126e82, transparent 35%), #161325; }
+      .quote-card { width: min(680px, 100%); padding: clamp(32px, 7vw, 64px); border: 1px solid rgba(255,255,255,.18); border-radius: 24px; background: rgba(23,20,39,.76); box-shadow: 0 24px 80px rgba(0,0,0,.35); backdrop-filter: blur(12px); text-align: center; }
+      .eyebrow { margin: 0 0 22px; color: #b7a9e6; font: 700 .75rem/1 Arial, sans-serif; letter-spacing: .15em; text-transform: uppercase; }
+      blockquote { margin: 0; font-size: clamp(1.7rem, 4vw, 2.7rem); line-height: 1.25; }
+      blockquote::before { content: '“'; color: #e0bbff; font-size: 1.35em; line-height: 0; vertical-align: -.28em; margin-right: .08em; }
+      #author { min-height: 1.5em; margin: 26px 0 32px; color: #d6d0e4; font: italic 1rem/1.4 Arial, sans-serif; }
+      button { border: 0; border-radius: 999px; padding: 14px 24px; color: #171326; background: #f1d7ff; box-shadow: 0 5px 20px rgba(224,187,255,.25); cursor: pointer; font: 700 .95rem/1 Arial, sans-serif; transition: transform .18s ease, background .18s ease; }
+      button:hover:not(:disabled) { background: #fff; transform: translateY(-2px); }
+      button:focus-visible { outline: 3px solid #66d9ef; outline-offset: 4px; }
+      button:disabled { cursor: wait; opacity: .7; }
+      .status { min-height: 1.25em; margin: 18px 0 0; color: #ffbdc7; font: .85rem/1.4 Arial, sans-serif; }
+    </style>
+</head>
+
+<body>
+    <main class="quote-card" aria-labelledby="quote-text">
+        <p class="eyebrow">A thought for the moment</p>
+        <blockquote id="quote-text">Success is not final; failure is not fatal: it is the courage to continue that counts.</blockquote>
+        <p id="author">— Winston Churchill</p>
+        <button id="new-quote" type="button">Get a new quote</button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="app.js"></script>
+    
+</body>
+</html>
